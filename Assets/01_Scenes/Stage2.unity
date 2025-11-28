@@ -362,7 +362,13 @@ PrefabInstance:
       addedObject: {fileID: 608159744}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c098bfdd3eb772347be6051945757e33, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 608159746}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c098bfdd3eb772347be6051945757e33, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 608159743}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c098bfdd3eb772347be6051945757e33, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 608159747}
   m_SourcePrefab: {fileID: 100100000, guid: c098bfdd3eb772347be6051945757e33, type: 3}
 --- !u!1 &608159742 stripped
 GameObject:
@@ -382,6 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   speed: 10
+  rotSpeed: 10
 --- !u!136 &608159744
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -397,14 +404,63 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.04723804
-  m_Height: 0.2046027
+  m_Height: 0.19349737
   m_Direction: 1
-  m_Center: {x: 0, y: 0.09, z: 0}
+  m_Center: {x: 0, y: 0.10242515, z: 0}
+--- !u!54 &608159746
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608159742}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 1
+--- !u!95 &608159747
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608159742}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9894e2f59e0d164cbb0e66bc75bfe95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &799109088
 PrefabInstance:
   m_ObjectHideFlags: 0
