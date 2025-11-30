@@ -445,9 +445,6 @@ MonoBehaviour:
   distance: 40
   height: 5
   rotateTime: 0.5
-  basePitch: 45
-  currentYaw: 0
-  targetYaw: 0
 --- !u!1 &546220805
 GameObject:
   m_ObjectHideFlags: 0
