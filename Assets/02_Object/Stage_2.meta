@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 guid: 98ae806263524be47aaad93a8da185f2
 folderAsset: yes
 DefaultImporter:
@@ -16,6 +17,16 @@ folderAsset: yes
 DefaultImporter:
   externalObjects: {}
 >>>>>>>> Stashed changes:Assets/02_Object/Stage_2.meta
+>>>>>>> Stashed changes
+=======
+<<<<<<<< Updated upstream:Assets/02_Object/Stage_2/Material.meta
+guid: fc353db5f8714a5429eed88e0a6f72c5
+========
+guid: 3d377304e8270b045a2aab94f19c1df9
+>>>>>>>> Stashed changes:Assets/02_Object/Stage_2.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
 >>>>>>> Stashed changes
   userData: 
   assetBundleName: 

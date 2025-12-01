@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Packages/com.merry-yellow.code-assist/Editor.meta
 guid: 56aa40a5f36ca0f4fa8e3b76c5b86b73
+========
+guid: b3fa5ebfd85b23849b60a68b12bd562d
+>>>>>>>> Stashed changes:Assets/02_Object/Stage_2/Mater.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
