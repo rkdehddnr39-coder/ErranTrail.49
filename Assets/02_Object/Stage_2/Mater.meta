@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:Assets/01_Scenes/TerrainData_75807630-9b3c-4c7a-94a9-857f10bd7d42.asset.meta
 guid: 1e025b9cf07e28346bc2f9375e22103e
 NativeFormatImporter:
@@ -11,16 +10,6 @@ folderAsset: yes
 DefaultImporter:
   externalObjects: {}
 >>>>>>>> Stashed changes:Assets/02_Object/Stage_2/Mater.meta
-=======
-<<<<<<<< Updated upstream:Packages/com.merry-yellow.code-assist/Editor.meta
-guid: 56aa40a5f36ca0f4fa8e3b76c5b86b73
-========
-guid: b3fa5ebfd85b23849b60a68b12bd562d
->>>>>>>> Stashed changes:Assets/02_Object/Stage_2/Mater.meta
-folderAsset: yes
-DefaultImporter:
-  externalObjects: {}
->>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 
