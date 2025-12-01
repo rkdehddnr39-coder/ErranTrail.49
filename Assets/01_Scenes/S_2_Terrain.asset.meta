@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/01_Scenes/S_2_Terrain.asset.meta
 guid: b3dea9eed40db73418835e6a0ec2b65d
+=======
+guid: 2fcee445c45f0e64d9431ebdc7a6b71c
+>>>>>>> Stashed changes:Assets/New Terrain.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 15600000

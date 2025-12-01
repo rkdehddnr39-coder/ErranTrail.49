@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/01_Scenes/TerrainData_436fb221-7760-45d6-ace8-aef710f30eda.asset.meta
 guid: 9c2d87b22b83a2f45afc1813d6c399d1
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 15600000
+========
+guid: 3d377304e8270b045a2aab94f19c1df9
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+>>>>>>>> Stashed changes:Assets/02_Object/Stage_2.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
