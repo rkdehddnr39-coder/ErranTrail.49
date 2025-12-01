@@ -8,9 +8,9 @@ public class FollowCamera : MonoBehaviour
     public float height;
     public float rotateTime;
 
-    private float basePitch = 45f;
-    private float currentYaw = 0f;
-    private float targetYaw = 0f;
+    public float basePitch = 20f;
+    public float currentYaw = 0f;
+    public float targetYaw = 0f;
 
     void Start()
     {
