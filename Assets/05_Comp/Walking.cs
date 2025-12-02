@@ -8,11 +8,13 @@ public class Walking : MonoBehaviour
     private Rigidbody rb;
     public float rotSpeed;
     private Vector3 moveVec = Vector3.zero;
+    private Animation anime;
 
     public Transform cam;
 
     void Start()
     {
+        anime = GetComponent<Animation>();
         rb = this.GetComponent<Rigidbody>();
     }
 
