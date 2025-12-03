@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements.Experimental;
 public class Walking_Player : MonoBehaviour
 {
     float hAxis;
@@ -11,12 +12,15 @@ public class Walking_Player : MonoBehaviour
     private Animator anime;
     public Transform cam;
 
+    public float maxSpeed = 10f;
+    public float accacceleration = 10f;
+
     void Start()
     {
         anime = GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody>();
 
-        anime.SetBool("isWalk",false);
+        anime.SetBool("isWalk", false);
     }
     private void Update()
     {
@@ -38,6 +42,18 @@ public class Walking_Player : MonoBehaviour
         camRight.Normalize();
 
         moveVec = (camForward * vAxis + camRight * hAxis).normalized;
+
+        if (hAxis != 0 || vAxis != 0)
+        {
+            speed = Mathf.Lerp(speed, maxSpeed, accacceleration * Time.deltaTime);
+        }
+
+        else
+        {
+            moveVec = Vector3.zero;
+            speed = 0f;
+        }
+
         transform.position += moveVec * speed * Time.deltaTime;
 
         if (moveVec != Vector3.zero)
