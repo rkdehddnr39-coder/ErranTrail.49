@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class Walking_Npc : MonoBehaviour
 {
     public Transform target;
-    public float stopDis;
 
     private NavMeshAgent npc;
     private Animator anime;
@@ -16,7 +15,7 @@ public class Walking_Npc : MonoBehaviour
         npc = GetComponent<NavMeshAgent>();
         anime = GetComponent<Animator>();
 
-        transform.position = target.position - target.forward * stopDis;
+        transform.position = target.position - target.forward * npc.stoppingDistance;
         transform.rotation = target.rotation;
     }
 
@@ -25,7 +24,7 @@ public class Walking_Npc : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, target.position);
 
-        if (distance > stopDis)
+        if (distance > npc.stoppingDistance)
         {
             npc.SetDestination(target.position);
             anime.SetBool("isWalk", true);

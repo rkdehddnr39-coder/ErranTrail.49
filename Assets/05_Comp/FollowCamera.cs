@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
@@ -8,15 +9,25 @@ public class FollowCamera : MonoBehaviour
     public float height;
     public float rotateTime;
 
-    public float basePitch;
+    public float pitch;
     private float currentYaw = 0f;
     private float targetYaw = 180f;
+
+    private float scrollSpeed = 10f;
+
+    private float targetHeight;
+    private float targetDistance;
+    private float targetPitch;
 
     void Start()
     {
         //마우스 숨기기//
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        targetHeight = height;
+        targetDistance= distance;
+        targetPitch = pitch;
     }
 
     // Update is called once per frame
@@ -28,7 +39,25 @@ public class FollowCamera : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
             targetYaw += 90f;
 
-        currentYaw = Mathf.Lerp(currentYaw, targetYaw, Time.deltaTime / rotateTime);
+        currentYaw = Mathf.Lerp(currentYaw, targetYaw, Time.deltaTime * rotateTime);
+
+
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        targetHeight = Mathf.Clamp(targetHeight, 1f, 4f);
+        targetDistance = Mathf.Clamp(targetDistance, 4f, 16f);
+        targetPitch = Mathf.Clamp(targetPitch, 5f, 20f);
+
+        if (scroll != 0)
+        {
+            targetHeight -= scroll * 1f;     
+            targetDistance -= scroll * 4f;   
+            targetPitch -= scroll * 5f;
+        }
+
+        height = Mathf.Lerp(height, targetHeight, Time.deltaTime * scrollSpeed);
+        distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * scrollSpeed);
+        pitch = Mathf.Lerp(pitch, targetPitch, Time.deltaTime * scrollSpeed);
     }
 
     void LateUpdate()
@@ -36,7 +65,7 @@ public class FollowCamera : MonoBehaviour
         if (!target) return;
 
         // 현재 회전 각도로 방향 벡터 계산
-        Quaternion rot = Quaternion.Euler(basePitch, currentYaw, 0f);
+        Quaternion rot = Quaternion.Euler(pitch, currentYaw, 0f);
         Vector3 offset = rot * new Vector3(0, height, -distance);
 
         // 카메라 위치 = 플레이어 위치 + 오프셋

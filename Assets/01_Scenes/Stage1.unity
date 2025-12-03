@@ -6287,7 +6287,7 @@ Transform:
   m_GameObject: {fileID: 2125141241}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 143.3, y: 17.9873, z: 118.8}
+  m_LocalPosition: {x: 144.8, y: 17.9873, z: 122.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6312,8 +6312,8 @@ SphereCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 24.79512
-  m_Center: {x: 0, y: 4.6118507, z: 19.683266}
+  m_Radius: 28.60355
+  m_Center: {x: 0, y: 4.6118507, z: 15.874836}
 --- !u!1001 &1957410018465501983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6326,6 +6326,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 102454580}
+    - target: {fileID: 3502785191051210381, guid: 171422663b6e9334e9f36c5962825a12, type: 3}
+      propertyPath: m_Mass
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3950008670626620338, guid: 171422663b6e9334e9f36c5962825a12, type: 3}
       propertyPath: m_LocalPosition.x
       value: 113.88
