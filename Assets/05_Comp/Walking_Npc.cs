@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Walking_Npc : MonoBehaviour
@@ -8,7 +9,7 @@ public class Walking_Npc : MonoBehaviour
 
     private NavMeshAgent npc;
     private Animator anime;
-
+    private float acceleration = 10f;
 
     void Start()
     {
@@ -22,18 +23,29 @@ public class Walking_Npc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float distance = Vector3.Distance(transform.position, target.position);
 
-        if (distance > npc.stoppingDistance)
+        if (distance > npc.stoppingDistance + 0.1f )
         {
             npc.SetDestination(target.position);
             anime.SetBool("isWalk", true);
         }
         else
         {
-            npc.ResetPath();
-            anime.SetBool("isWalk", false);
             npc.velocity = Vector3.zero;
+            anime.SetBool("isWalk", false);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            npc.speed = 15f;
+            npc.acceleration = 20f;
+        }
+        else
+        {
+            npc.speed = 10f;
+            npc.acceleration = 10f;
         }
     }
 }

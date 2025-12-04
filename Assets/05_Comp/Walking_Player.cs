@@ -28,6 +28,17 @@ public class Walking_Player : MonoBehaviour
         vAxis = Input.GetAxisRaw("Vertical");
 
         anime.SetBool("isWalk", moveVec != Vector3.zero);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            maxSpeed = 15f;
+            anime.speed = Mathf.Lerp(anime.speed , 2f, accacceleration*Time.deltaTime);
+        }
+        else
+        {
+            maxSpeed = 10f;
+            anime.speed = Mathf.Lerp(anime.speed , 1f, accacceleration*Time.deltaTime);
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
