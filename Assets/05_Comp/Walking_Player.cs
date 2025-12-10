@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements.Experimental;
@@ -28,17 +29,6 @@ public class Walking_Player : MonoBehaviour
         vAxis = Input.GetAxisRaw("Vertical");
 
         anime.SetBool("isWalk", moveVec != Vector3.zero);
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            maxSpeed = 15f;
-            anime.speed = Mathf.Lerp(anime.speed , 2f, accacceleration*Time.deltaTime);
-        }
-        else
-        {
-            maxSpeed = 10f;
-            anime.speed = Mathf.Lerp(anime.speed , 1f, accacceleration*Time.deltaTime);
-        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -64,16 +54,43 @@ public class Walking_Player : MonoBehaviour
             moveVec = Vector3.zero;
             speed = 0f;
         }
+        
+        Vector3 nextPosition = rb.position + moveVec * speed * Time.deltaTime;
+        rb.MovePosition(nextPosition);
 
-        transform.position += moveVec * speed * Time.deltaTime;
+        //transform.position += moveVec * speed * Time.deltaTime;//
 
-        if (moveVec != Vector3.zero)
+        /* if (moveVec != Vector3.zero)
         {
             if (Mathf.Sign(transform.forward.x) != Mathf.Sign(moveVec.x) || Mathf.Sign(transform.forward.z) != Mathf.Sign(moveVec.z))
             {
                 transform.Rotate(0, 1, 0);
             }
             transform.forward = Vector3.Lerp(transform.forward, moveVec, rotSpeed * Time.deltaTime);
+        } */
+
+        if (moveVec != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveVec);
+            rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, rotSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            maxSpeed = 15f;
+            anime.speed = Mathf.Lerp(anime.speed, 2f, accacceleration * Time.deltaTime);
+        }
+        else
+        {
+            maxSpeed = 10f;
+            anime.speed = Mathf.Lerp(anime.speed, 1f, accacceleration * Time.deltaTime);
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Restricted_area"))
+        {
+            speed = 0f;
         }
     }
 }
