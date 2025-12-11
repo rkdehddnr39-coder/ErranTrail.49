@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Restricted_area
+  - ground
   layers:
   - Default
   - TransparentFX
