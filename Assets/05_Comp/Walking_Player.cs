@@ -18,19 +18,14 @@ public class Walking_Player : MonoBehaviour
     public float maxSpeed = 10f;
     public float accacceleration = 10f;
 
-    public Transform raycastOrigin;
-    public float chDistance;
-
     public LayerMask maskLayer;
-
+    public float maxDistance;
     void Start()
     {
         anime = GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody>();
 
         anime.SetBool("isWalk", false);
-
-
     }
     private void Update()
     {
@@ -39,11 +34,23 @@ public class Walking_Player : MonoBehaviour
 
         anime.SetBool("isWalk", moveVec != Vector3.zero);
 
-        direction = this.transform.forward;
+        Vector3 origin = this.transform.position + Vector3.up * 0.7f;
+        Vector3 direction = this.transform.forward.normalized;
 
-        bool Physics.Raycast(Vector3 origin, Vector3 direction, float maxDistance, int layerMask)
+        Debug.DrawRay(origin, direction * maxDistance, Color.red);
+
+        if (Physics.Raycast(origin, direction, maxDistance, maskLayer))
+        {
+            this.speed = 0f;
+        }
+
+        /*
+        direction = this.transform.forward;
+        maskLayer = 
+
+        bool Physics.Raycast(Vector3 origin, Vector3 direction, float maxDistance, int maskLayer); 
+        */
     }
-    // Update is called once per frame
     void FixedUpdate()
     {
 
