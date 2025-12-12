@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements.Experimental;
+using static UnityEngine.UI.Image;
 public class Walking_Player : MonoBehaviour
 {
     float hAxis;
@@ -13,8 +14,14 @@ public class Walking_Player : MonoBehaviour
     private Animator anime;
     public Transform cam;
 
+
     public float maxSpeed = 10f;
     public float accacceleration = 10f;
+
+    public Transform raycastOrigin;
+    public float chDistance;
+
+    public LayerMask maskLayer;
 
     void Start()
     {
@@ -22,6 +29,8 @@ public class Walking_Player : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
 
         anime.SetBool("isWalk", false);
+
+
     }
     private void Update()
     {
@@ -29,6 +38,10 @@ public class Walking_Player : MonoBehaviour
         vAxis = Input.GetAxisRaw("Vertical");
 
         anime.SetBool("isWalk", moveVec != Vector3.zero);
+
+        direction = this.transform.forward;
+
+        bool Physics.Raycast(Vector3 origin, Vector3 direction, float maxDistance, int layerMask)
     }
     // Update is called once per frame
     void FixedUpdate()
