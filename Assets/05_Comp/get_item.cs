@@ -6,6 +6,15 @@ public class get_itiem : MonoBehaviour
     public float amplitude;
     public float frequency; 
     private Vector3 startPosition;
+
+    bool collected;
+    float t;
+
+    private float collectTime = 1f;
+    private float rise = 1f;
+    private float duration = 1f;
+
+
     void Start()
     {
         startPosition = transform.position;
@@ -14,18 +23,38 @@ public class get_itiem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float newY = Mathf.PingPong(Time.time * frequency, amplitude);
+        if ((!collected))
+        {
+            float newY = Mathf.PingPong(Time.time * frequency, amplitude);
 
-        var pos = transform.position;
-        pos.y = startPosition.y + newY;
-        transform.position = pos;
+            var pos = transform.position;
+            pos.y = startPosition.y + newY;
+            transform.position = pos;
+
+            return;
+        }
+
+        t += Time.deltaTime;
+
+        float u = Mathf.Clamp01(t / collectTime);
+        transform.position += Vector3.up * (rise * Time.deltaTime);
+
+        float spin = Mathf.Lerp(360f , 1440f, u);
+        transform.Rotate(Vector3.up, spin * Time.deltaTime, Space.World);
+
+        if (t >= duration)
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (collected) return;
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            collected = true;
+            t = 0f;
+            startPosition = transform.position;
+            GetComponent<Collider>().enabled = false;  
         }
     }
 }
