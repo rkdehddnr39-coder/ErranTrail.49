@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Rotate_item : MonoBehaviour
+public class OpenDoor : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,6 +11,6 @@ public class Rotate_item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up * 20f * Time.deltaTime);
+        
     }
 }
