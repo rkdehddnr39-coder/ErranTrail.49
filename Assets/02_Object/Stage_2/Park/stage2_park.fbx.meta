@@ -3,62 +3,7 @@ guid: b62004effcaef404fb9a217339205d7d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.033
-    second: {fileID: 2100000, guid: 7d0bbb555a42ee04ea276f158f767ca7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.048
-    second: {fileID: 2100000, guid: f2061d05f77db1c4b93aa5148a56e8fe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.053
-    second: {fileID: 2100000, guid: 6bcc3d69dbec70a4ca7298c8d4c06cab, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.063
-    second: {fileID: 2100000, guid: dd3e4e299daef434c83f21584f880329, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.073
-    second: {fileID: 2100000, guid: 41c6d68b1cf58b74f8d8cb8fb69ad3bc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: cloth trash
-    second: {fileID: 2100000, guid: 623dc91658173ef4f93fd29cbd39cd6d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: park
-    second: {fileID: 2100000, guid: e6563efd80a46d345b3a53b50faaa817, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: park_stiar
-    second: {fileID: 2100000, guid: 8b98492f433e89c48bf6dc5725087a88, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: park_wood
-    second: {fileID: 2100000, guid: 839276ead6f259f4389cab7e5ea4d16d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: trash
-    second: {fileID: 2100000, guid: 833352b42febda141ab59e420c1ef733, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: trash_inside
-    second: {fileID: 2100000, guid: ae97c6fc725e51d44a9843ea960d387f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
