@@ -1,11 +1,9 @@
-    using Unity.VisualScripting;
     using UnityEngine;
-    using UnityEngine.EventSystems;
-    using UnityEngine.UIElements.Experimental;
-    using static UnityEngine.UI.Image;
+
     public class Walking_Player_FP : MonoBehaviour
     {
         public float speed;
+        public float returnSpeed;
         private Rigidbody rb;
         private Vector3 moveVec = Vector3.zero;
         private Animator anime;
@@ -18,6 +16,8 @@
             rb = this.GetComponent<Rigidbody>();
 
             anime.SetBool("isWalk", false);
+           returnSpeed = speed;
+
         }
         private void Update()
         {
@@ -36,6 +36,11 @@
             {
                 this.speed = 0f;
             }
+
+            else
+        {
+            speed = returnSpeed;
+        }
 
         }
         void FixedUpdate()

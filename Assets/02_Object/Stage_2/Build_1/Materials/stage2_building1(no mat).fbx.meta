@@ -9,6 +9,31 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: GLASS
     second: {fileID: 2100000, guid: 1b1fba1c34bd0c640ba12643e136ae55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brick.001
+    second: {fileID: 2100000, guid: c81bcbe4a804bdd42982037cfd613d8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brick.002
+    second: {fileID: 2100000, guid: 70b6d0156644bc0479b299280bb5381c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brick.003
+    second: {fileID: 2100000, guid: b93d9d0267e0e964e89385b41d292308, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brick.004
+    second: {fileID: 2100000, guid: b512f838a5064284fbbb83ebaeca1656, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brick.005
+    second: {fileID: 2100000, guid: 4218a48560be9ee4a99dbba374c004c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -7,10 +7,13 @@ public class TeleportDoor : MonoBehaviour
     public float fadeDuration = 1f;
     public Transform player;
     public Transform teleportTarget;
+    
+    bool isTeleporting = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+
+        if (other.CompareTag("Player") && !isTeleporting)
         {
             StartCoroutine(FadeAndTeleport());
         }
@@ -18,7 +21,7 @@ public class TeleportDoor : MonoBehaviour
 
     IEnumerator FadeAndTeleport()
     {
-        // 1. 화면 어둡게 만들기 (Fade Out)
+        isTeleporting = true;
         float timer = 0f;
         while (timer < fadeDuration)
         {
@@ -27,19 +30,28 @@ public class TeleportDoor : MonoBehaviour
             yield return null;
         }
 
-        // 2. 위치 이동
-        player.position = teleportTarget.position;
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.position = teleportTarget.position;
+            rb.linearVelocity = Vector3.zero;
+        }
+        else
+        {
+            player.position = teleportTarget.position;
+        }
 
-        // 잠시 대기 (이동 후 로딩 시간을 연출하고 싶다면)
         yield return new WaitForSeconds(0.5f);
 
-        // 3. 화면 밝게 만들기 (Fade In)
         timer = 0f;
         while (timer < fadeDuration)
         {
             timer += Time.deltaTime;
             fadeGroup.alpha = Mathf.Lerp(1, 0, timer / fadeDuration);
             yield return null;
+
         }
+
+        isTeleporting = false;
     }
 }

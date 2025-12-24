@@ -36,8 +36,6 @@ public class FirstPersonCamera : MonoBehaviour
         pitch -= mouseY;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
 
-        Debug.Log(pitch);
-
         transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
 
         //마우스X에 따라서 Y축기준으로 회전//
