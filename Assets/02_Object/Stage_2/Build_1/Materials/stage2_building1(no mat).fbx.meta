@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: 5f81024e66289954482fb9476f4ba1f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: brick.001
     second: {fileID: 2100000, guid: c81bcbe4a804bdd42982037cfd613d8c, type: 2}
   - first:
