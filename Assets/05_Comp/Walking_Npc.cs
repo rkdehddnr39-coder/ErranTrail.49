@@ -38,11 +38,11 @@ public class Walking_Npc : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            npc.speed = 15f;
+            npc.speed = 10f;
         }
         else
         {
-            npc.speed = 10f;
+            npc.speed = 5f;
         }
     }
 }

@@ -15,8 +15,8 @@ public class Walking_Player : MonoBehaviour
     public Transform cam;
 
 
-    public float maxSpeed = 10f;
-    public float accacceleration = 10f;
+    public float maxSpeed = 5f;
+    public float accacceleration = 5f;
 
     public LayerMask maskLayer;
     public float maxDistance;
@@ -97,12 +97,12 @@ public class Walking_Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            maxSpeed = 15f;
+            maxSpeed = 10f;
             anime.speed = Mathf.Lerp(anime.speed, 2f, accacceleration * Time.deltaTime);
         }
         else
         {
-            maxSpeed = 10f;
+            maxSpeed = 5f;
             anime.speed = Mathf.Lerp(anime.speed, 1f, accacceleration * Time.deltaTime);
         }
     }

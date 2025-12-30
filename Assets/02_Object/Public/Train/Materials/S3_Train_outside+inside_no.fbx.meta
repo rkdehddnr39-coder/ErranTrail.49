@@ -32,6 +32,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: table.001
+    second: {fileID: 2100000, guid: d6658226147bb1143b26a188845cd7bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: train glass
     second: {fileID: 2100000, guid: d7c6f1a2fb2e543409855849c21aa01d, type: 2}
   - first:
